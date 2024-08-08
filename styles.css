@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+    color: #333;
+}
+
+.search-section {
+    background: #e0e7ff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.search-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-type label {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #e0e7ff;
+}
+
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.search-button {
+    background: #0054a6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.steps-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.step {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.vehicles-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.vehicles-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.vehicle {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
+}
+
+.vehicle img {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.app-section {
+    background: url('./img/01B-muslim-matrimonial-website-app-1536x740.jpg') no-repeat center center/cover;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    position: relative;
+}
+
+.app-background {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.app-button {
+    background: #0054a6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .search-type {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .steps-container, .vehicles-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step, .vehicle {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .app-section {
+        height: auto;
+        padding: 40px 20px;
+    }
+}
+
+
+
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 

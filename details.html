@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #092742 !important;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .vehicle-details {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            color: #151414;
+        }
+        .vehicle-details img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .btn-book {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        
+        .navbar-brand img {
+            max-height: 80px; /* Adjust based on your design */
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/img/VEHIWAY LOGO TR G.png" alt="VEHIWAY" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Our Rides</a></li>
+                <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Partner with us</a></li>
+            </ul>
+        </div>
+        <!-- <li class="nav-item"><a class="nav-link btn btn-success text-white" href="#">Contact Us</a></li> -->
+    </header>
+    <div class="container">
+        <h1>Vehicle Details</h1>
+        <div class="vehicle-details">
+            <img id="vehicle-image" src="" alt="Vehicle Image">
+            <h2 id="vehicle-name"></h2>
+            <p id="vehicle-price"></p>
+            <p id="vehicle-seats"></p>
+            <p id="vehicle-ac"></p>
+            <p id="trip-details"></p>
+            <button class="btn-book" onclick="bookNow()">Book Now</button>
+        </div>
+    </div>
+
+    <script>
+        function bookNow() {
+            alert('Booking functionality not implemented yet.');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const vehicle = urlParams.get('vehicle');
+            const price = urlParams.get('price');
+            const seats = urlParams.get('seats');
+            const ac = urlParams.get('ac');
+            const image = urlParams.get('image');
+            const tripType = urlParams.get('tripType');
+            const fromLocation = urlParams.get('fromLocation');
+            const toLocation = urlParams.get('toLocation');
+            const date = urlParams.get('date');
+
+            document.getElementById('vehicle-image').src = image;
+            document.getElementById('vehicle-name').innerText = vehicle;
+            document.getElementById('vehicle-price').innerText = `Price: ₹${price}`;
+            document.getElementById('vehicle-seats').innerText = `Seats: ${seats}`;
+            document.getElementById('vehicle-ac').innerText = `AC: ${ac}`;
+            document.getElementById('trip-details').innerHTML = `
+                <p><strong>Trip Type:</strong> ${tripType}</p>
+                <p><strong>From:</strong> ${fromLocation}</p>
+                <p><strong>To:</strong> ${toLocation}</p>
+                <p><strong>Date:</strong> ${date}</p>
+            `;
+        });
+    </script>
+
+</body>
+</html>

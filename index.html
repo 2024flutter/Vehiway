@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Rent Ride Repeat</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" integrity="sha512-B46MVOJpI6RBsdcU307elYeStF2JKT87SsHZfRSkjVi4/iZ3912zXi45X5/CBr/GbCyLx6M1GQtTKYRd52Jxgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #092742 !important;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+        .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    padding: 5px;
+    font-size: 14px;
+    margin-bottom: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+        .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #d5e717;
+}
+        .btn-grad {
+    background-image: linear-gradient(to right, #a4d33aa3 0%, #d5e717 51%, #d5e71773 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+  .tab-icon {
+    margin-left: 0.5rem;
+}
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+ 
+    
+  .main-content {
+    display: flex;
+    /* height: 89vh; */
+    padding: 0.5em 2em;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+.form-control {
+    display: flex;
+    width: 100%;
+    /* height: 100px; */
+    padding: .375rem .75rem;
+    /* font-size: 1rem; */
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+        .main-content h1 {
+            font-size: 6rem;
+            /* margin-right: 20px; */
+        }
+        .main-content h1 span {
+            color: #d5e717;
+        }
+        p{
+            color: #5c5858;
+        }
+        .form-container {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .nav-tabs {
+    /* border-bottom: none; */
+    border: 1px solid grey;
+    border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 0rem;
+}
+        .nav-link {
+            border: 1px solid transparent;
+            border-radius: 10px;
+            margin-right: 5px;
+        } 
+        .nav-link.active {
+          
+            border-color: #e0f3ff;
+            color: black;
+        }
+        .tab-content {
+            padding: 20px 0 0px;
+        }
+
+        h3 { font-size: 1.4rem; }
+
+        h2 { color: #d5e717; }
+        .hh2 {font-size: 18px;color: #050504;text-align: center;}
+        @media (min-width: 808px) {
+            .main-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            @media (max-width: 350px) {
+                .nav-link {
+ 
+    padding: .2rem 1rem;
+    font-size: 9px;
+}
+
+.nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+        }
+
+            
+main.main-content {
+    padding: 2em;
+}
+          
+        }
+        @media (max-width: 600px) {
+            .main-content h1 {
+                font-size: 2rem;
+                margin-bottom: 16px;
+            }
+        }
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-collapse {
+                display: -ms-flexbox !important;
+                display: flex !important;
+                -ms-flex-preferred-size: auto;
+                flex-basis: auto;
+                justify-content: center !important;
+            }
+        }
+        .navbar-nav .nav-item .nav-link {
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .top_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+        .navbar-nav .nav-item .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            background: #d5e717;
+            transition: width 0.3s;
+            bottom: 0;
+            left: 0;
+        }
+        .navbar-nav .nav-item .nav-link:hover::after {
+            width: 100%;
+        }
+        .steps-section {
+            padding: 20px;
+            text-align: center;
+            margin-top: 10rem;
+        }
+        .steps-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+        }
+        .vehicles-section {
+    padding: 20px;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.nav-tabs .nav-link.active {
+        color: #495057;
+        background-color: #d5e71769;
+        /* border-color: #d5e717 #d5e717 #d5e717; */
+        border: 1px solid #555554;
+    }
+.vehicles-container {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-around;
+    
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.vehicle {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 250px;
+    color: #151414;
+    /* display: inline-block; */
+    margin-right: 10px;
+    flex: 0 0 auto;
+}
+
+.vehicle img {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Adjust the vehicles-container to be horizontal scrolling on small screens */
+@media (max-width: 768px) {
+    .vehicles-container {
+        display: flex;
+        scroll-behavior: smooth;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+        .app-section {
+            background: url('./img/01B-muslim-matrimonial-website-app-1536x740.jpg') no-repeat center center/cover;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            position: relative;
+        }
+        .app-background {
+            background: rgb(198 193 193 / 62%);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .app-button {
+            background: #0054a6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .steps-container, .vehicles-container {
+                flex-direction: row;
+                /* align-items: center; */
+                overflow-x: auto;
+                overflow-y: hidden;
+                /* white-space: nowrap; */
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                /* margin: 10px; */
+            }
+
+            .vehicle {
+    
+            flex: 0 0 auto;
+        }
+            
+            .step, .vehicle {
+                width: 80%;
+                margin-bottom: 20px;
+                /* flex: 3 0 auto; */
+                margin: 15px;
+                /* display: flex; */
+                /* flex-direction: column; */
+                /* flex-wrap: wrap; */
+            }
+            .app-section {
+                height: auto;
+                padding: 40px 20px;
+            }
+        }
+
+
+        .footer {
+            background: #f8f9fa;
+            color: #232424;
+            padding: 40px 0;
+            text-align: left;
+        }
+        .footer .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .footer .footer-description {
+            margin-bottom: 20px;
+        }
+        .footer .footer-section {
+            margin-bottom: 20px;
+        }
+        .footer .footer-section h5 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer .footer-section ul li a {
+            color: #6c757d;
+            text-decoration: none;
+        }
+        .footer .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer .footer-bottom {
+            border-top: 1px solid #dee2e6;
+            padding-top: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .footer .footer-section {
+                text-align: center;
+            }
+        }
+
+        .navbar-brand img {
+            max-height: 80px; /* Adjust based on your design */
+        }
+  
+
+        @media (max-width: 668px) {
+    .top_heading {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 20px;
+}
+
+    .main-content h1 {
+        font-size: 4rem;
+}
+
+
+   
+
+
+  }
+  @media (max-width: 468px) {
+    .top_heading {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 15px;
+}
+
+    .main-content h1 {
+        font-size: 2rem;
+}
+
+
+  }
+
+  .i-icon{
+    width: 22px;
+    height: 22px;
+  }
+    </style>
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/img/VEHIWAY LOGO TR G.png" alt="VEHIWAY" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Our Rides</a></li>
+                <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Partner with us</a></li>
+            </ul>
+        </div>
+        <!-- <li class="nav-item"><a class="nav-link btn btn-success text-white" href="#">Contact Us</a></li> -->
+    </header>
+
+    <main class="main-content">
+        <div class="top_heading">
+            <h1>Rent </h1><h1>Ride</h1> <h1><span>Repeat!</span></h1>
+        </div>
+        <div class="form-container">
+            <h2 class="hh2">Search your ride</h2>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="outstation-cabs-tab" data-toggle="tab" href="#outstation-cabs" role="tab" aria-controls="outstation-cabs" aria-selected="true">
+                        <span class="tab-icon">Outstation Cabs</span>
+                        <span class="tab-text d-none"><img src="/img/bus-station.png" class="i-icon" alt="Car Icon"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="airport-cabs-tab" data-toggle="tab" href="#airport-cabs" role="tab" aria-controls="airport-cabs" aria-selected="false">
+                        <span class="tab-text d-none">Airport Cabs</span>
+                        <span class="tab-icon"><img src="/img/airplane (1).png" class="i-icon" alt="Airplane Icon"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="hourly-rental-tab" data-toggle="tab" href="#hourly-rental" role="tab" aria-controls="hourly-rental" aria-selected="false">
+                        <span class="tab-text d-none">Hourly Rental</span>
+                        <span class="tab-icon"><img src="/img/car-rent.png" class="i-icon" alt="Clock Icon"></span>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="outstation-cabs" role="tabpanel" aria-labelledby="outstation-cabs-tab">
+                    <form>
+                        <div class="form-group">
+                            <label>Trip type</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tripType" id="oneWay" value="oneWay" checked>
+                                <label class="form-check-label" for="oneWay">ONE WAY</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tripType" id="roundTrip" value="roundTrip">
+                                <label class="form-check-label" for="roundTrip">ROUND TRIP</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="from">FROM</label>
+                            <input type="text" class="form-control" id="from" placeholder="Enter location">
+                        </div>
+                        <div class="form-group">
+                            <label for="to">TO</label>
+                            <input type="text" class="form-control" id="to" placeholder="Enter location">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">DATE</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-grad">Search</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="airport-cabs" role="tabpanel" aria-labelledby="airport-cabs-tab">
+                    <form>
+                        <div class="form-group">
+                            <label for="pickupLocation">PICKUP LOCATION</label>
+                            <input type="text" class="form-control" id="pickupLocation" placeholder="Enter pickup location">
+                        </div>
+                        <div class="form-group">
+                            <label for="dropoffLocation">DROPOFF LOCATION</label>
+                            <input type="text" class="form-control" id="dropoffLocation" placeholder="Enter dropoff location">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">DATE</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-grad">Search</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="hourly-rental" role="tabpanel" aria-labelledby="hourly-rental-tab">
+                    <form>
+                        <div class="form-group">
+                            <label for="pickupLocation">PICKUP LOCATION</label>
+                            <input type="text" class="form-control" id="pickupLocation" placeholder="Enter pickup location">
+                        </div>
+                        <div class="form-group">
+                            <label for="rentalHours">RENTAL HOURS</label>
+                            <input type="number" class="form-control" id="rentalHours" placeholder="Enter rental hours">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">DATE</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-grad">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="steps-section">
+        <h2>Booking car hire in three simple steps</h2>
+        <div class="steps-container">
+            <div class="step">
+                <img src="/img/Directions-pana (1).svg" alt="Search">
+                <h3>Step 1: Search</h3>
+                <p>Enter your location and see what's available.</p>
+            </div>
+            <div class="step">
+                <img src="/img/personal goals checklist-pana.svg" alt="Compare">
+                <h3>Step 2: Compare</h3>
+                <p>Compare rental cars.</p>
+            </div>
+            <div class="step">
+                <img src="/img/Flight Booking-pana.svg" alt="Book">
+                <h3>Step 3: Book</h3>
+                <p>compare car rental prices on found your ride.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vehicles-section">
+        <h2>Vehicles you can book</h2>
+        <div class="vehicles-container">
+            <div class="vehicle">
+                <!-- <h3>Hatchbacks and Sedans</h3>
+                <p>Ideal for about 2-4 people</p> -->
+                <img src="./img/unmatched-unrivaled-banner1600x850-removebg-preview.png" alt="Hatchbacks and Sedans">
+            </div>
+            <div class="vehicle">
+                <!-- <h3>SUVs</h3>
+                <p>Ideal for about 4-7 people</p> -->
+                <img src="/img/IMG_7664.PNG" alt="Suv">
+            </div>
+            <div class="vehicle">
+                <!-- <h3>Tempo Travellers</h3>
+                <p>Ideal for 8-16 people</p> -->
+                <img src="/img/IMG_7663.PNG" alt="Tempo Travellers">
+            </div>
+            <div class="vehicle">
+                <!-- <h3>Buses and Mini Buses</h3>
+                <p>Ideal for more than 18 people</p> -->
+                <img src="./img/IMG_7666.PNG" alt="Buses and Mini Buses">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="app-section">
+        <div class="app-background">
+            <h2 class="hh2">Book car hire on our app</h2>
+            <p>Find and compare the best deals on car hire and van rental anywhere in the world, from wherever you are in seconds.</p>
+            <button type="button" class="app-button">Download the app</button>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-section">
+                    <div class="footer-logo">VEHIWAY</div>
+                    <div class="footer-description">Your reliable ride partner.</div>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Our Rides</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li><a href="#">Email: info@vehiway.com</a></li>
+                        <li><a href="#">Phone: +123 456 7890</a></li>
+                        <li><a href="#">Address: 123 Ride St., Mumbai, 45678</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 VEHIWAY. All rights reserved.
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const tripType = document.querySelector('input[name="tripType"]:checked').value;
+                const fromLocation = document.getElementById('from').value;
+                const toLocation = document.getElementById('to').value;
+                const date = document.getElementById('date').value;
+
+                const queryString = `?tripType=${tripType}&fromLocation=${fromLocation}&toLocation=${toLocation}&date=${date}`;
+                window.location.href = 'results.html' + queryString;
+            });
+        });
+    </script>
+
+
+
+
+
+
+<script>
+	// Get the "Outstation Cabs", "Airport Cabs", and "Hourly Rental" tab links
+const outstationCabsTab = document.getElementById('outstation-cabs-tab');
+const airportCabsTab = document.getElementById('airport-cabs-tab');
+const hourlyRentalTab = document.getElementById('hourly-rental-tab');
+
+// Add event listener to the "Outstation Cabs" tab link
+outstationCabsTab.addEventListener('click', () => {
+    let isOutstationCabsTabSelected = true;
+
+    // Toggle the display of icon and text every 2 seconds
+    const intervalId = setInterval(() => {
+        // Toggle the display of icon and text for Outstation Cabs
+        outstationCabsTab.querySelector('.tab-text').classList.toggle('d-none');
+        outstationCabsTab.querySelector('.tab-icon').classList.toggle('d-none');
+    }, 2000);
+
+    // Stop the interval when the Outstation Cabs tab is deselected
+    outstationCabsTab.addEventListener('click', () => {
+        if (!isOutstationCabsTabSelected) {
+            clearInterval(intervalId);
+        }
+        isOutstationCabsTabSelected = !isOutstationCabsTabSelected;
+    });
+
+    // Hide the icon and show the text for Airport Cabs and Hourly Rental
+    airportCabsTab.querySelector('.tab-text').classList.remove('d-none');
+    airportCabsTab.querySelector('.tab-icon').classList.add('d-none');
+    hourlyRentalTab.querySelector('.tab-text').classList.remove('d-none');
+    hourlyRentalTab.querySelector('.tab-icon').classList.add('d-none');
+});
+
+// Add event listener to the "Airport Cabs" tab link
+airportCabsTab.addEventListener('click', () => {
+    let isAirportCabsTabSelected = true;
+
+    // Toggle the display of icon and text every 2 seconds
+    const intervalId = setInterval(() => {
+        // Toggle the display of icon and text for Airport Cabs
+        airportCabsTab.querySelector('.tab-text').classList.toggle('d-none');
+        airportCabsTab.querySelector('.tab-icon').classList.toggle('d-none');
+    }, 2000);
+
+    // Stop the interval when the Airport Cabs tab is deselected
+    airportCabsTab.addEventListener('click', () => {
+        if (!isAirportCabsTabSelected) {
+            clearInterval(intervalId);
+        }
+        isAirportCabsTabSelected = !isAirportCabsTabSelected;
+    });
+
+    // Hide the icon and show the text for Outstation Cabs and Hourly Rental
+    outstationCabsTab.querySelector('.tab-text').classList.remove('d-none');
+    outstationCabsTab.querySelector('.tab-icon').classList.add('d-none');
+    hourlyRentalTab.querySelector('.tab-text').classList.remove('d-none');
+    hourlyRentalTab.querySelector('.tab-icon').classList.add('d-none');
+});
+
+// Add event listener to the "Hourly Rental" tab link
+hourlyRentalTab.addEventListener('click', () => {
+    let isHourlyRentalTabSelected = true;
+
+    // Toggle the display of icon and text every 2 seconds
+    const intervalId = setInterval(() => {
+        // Toggle the display of icon and text for Hourly Rental
+        hourlyRentalTab.querySelector('.tab-text').classList.toggle('d-none');
+        hourlyRentalTab.querySelector('.tab-icon').classList.toggle('d-none');
+    }, 2000);
+
+    // Stop the interval when the Hourly Rental tab is deselected
+    hourlyRentalTab.addEventListener('click', () => {
+        if (!isHourlyRentalTabSelected) {
+            clearInterval(intervalId);
+        }
+        isHourlyRentalTabSelected = !isHourlyRentalTabSelected;
+    });
+
+    // Hide the icon and show the text for Outstation Cabs and Airport Cabs
+    outstationCabsTab.querySelector('.tab-text').classList.remove('d-none');
+    outstationCabsTab.querySelector('.tab-icon').classList.add('d-none');
+    airportCabsTab.querySelector('.tab-text').classList.remove('d-none');
+    airportCabsTab.querySelector('.tab-icon').classList.add('d-none');
+});
+</script>
+</body>
+</html>

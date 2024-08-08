@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #092742 !important;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .nav-tabs {
+            border: 1px solid grey;
+            border-radius: 8px;
+        }
+        .nav-link {
+            border: 1px solid transparent;
+            border-radius: 10px;
+            margin-right: 5px;
+        }
+        .nav-link.active {
+            border-color: #e0f3ff;
+            color: black;
+        }
+        .tab-content {
+            padding: 20px 0 0px;
+        }
+        .vehicle {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 100%;
+            color: #151414;
+            margin-bottom: 10px;
+            cursor: pointer;
+            justify-content: space-between;
+        }
+        .vehicle img {
+            width: 150px;
+            height: auto;
+        }
+        .vehicle-details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .vehicle-actions {
+            text-align: right;
+        }
+        .modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: black;
+}
+
+        .modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+    color: black;
+}
+        .vehicle-actions .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .vehicle-actions .btn {
+            margin-top: 10px;
+        }
+        .modal-body p {
+            margin: 10px 0;
+        }
+        .modal-body .icon-text {
+            display: flex;
+            align-items: center;
+        }
+        .modal-body .icon-text i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .navbar-brand img {
+            max-height: 80px; /* Adjust based on your design */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/img/VEHIWAY LOGO TR G.png" alt="VEHIWAY" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Our Rides</a></li>
+                <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Partner with us</a></li>
+            </ul>
+        </div>
+        <!-- <li class="nav-item"><a class="nav-link btn btn-success text-white" href="#">Contact Us</a></li> -->
+    </header>
+
+    <div class="container">
+        <h1>Search Results</h1>
+        <div id="search-details"></div>
+        
+        <ul class="nav nav-tabs" id="vehicleTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="cars-tab" data-toggle="tab" href="#cars" role="tab" aria-controls="cars" aria-selected="true">Cars</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tempo-tab" data-toggle="tab" href="#tempo" role="tab" aria-controls="tempo" aria-selected="false">Tempo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="buses-tab" data-toggle="tab" href="#buses" role="tab" aria-controls="buses" aria-selected="false">Buses</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="vehicleTabsContent">
+            <div class="tab-pane fade show active" id="cars" role="tabpanel" aria-labelledby="cars-tab">
+                <div class="vehicle" data-vehicle="Indica, Swift" data-price="2039" data-seats="4" data-ac="AC" data-image="/img/indica.png">
+                    <img src="/img/indica.png" alt="Indica, Swift">
+                    <div class="vehicle-details">
+                        <h3>Indica, Swift</h3>
+                        <p>4 Seats • AC</p>
+                        <a href="#" class="see-details" data-toggle="modal" data-target="#detailsModal" data-vehicle="Indica, Swift" data-price="2039" data-seats="4" data-ac="AC" data-details="5 seats, 2 suitcases, Gas, Automatic transmission, A/C, Bluetooth">See details</a>
+                    </div>
+                    <div class="vehicle-actions">
+                        <p class="price">₹2,039</p>
+                        <button class="btn btn-success select-vehicle">Select</button>
+                    </div>
+                </div>
+                <div class="vehicle" data-vehicle="Dzire, Etios" data-price="2162" data-seats="4" data-ac="AC" data-image="/img/dzire.png">
+                    <img src="/img/dzire.png" alt="Dzire, Etios">
+                    <div class="vehicle-details">
+                        <h3>Dzire, Etios</h3>
+                        <p>4 Seats • AC</p>
+                        <a href="#" class="see-details" data-toggle="modal" data-target="#detailsModal" data-vehicle="Dzire, Etios" data-price="2162" data-seats="4" data-ac="AC" data-details="5 seats, 2 suitcases, Gas, Automatic transmission, A/C, Bluetooth">See details</a>
+                    </div>
+                    <div class="vehicle-actions">
+                        <p class="price">₹2,162</p>
+                        <button class="btn btn-success select-vehicle">Select</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tempo" role="tabpanel" aria-labelledby="tempo-tab">
+                <div class="vehicle" data-vehicle="Tempo Traveller" data-price="4500" data-seats="12" data-ac="AC" data-image="/img/tempo.png">
+                    <img src="/img/tempo.png" alt="Tempo Traveller">
+                    <div class="vehicle-details">
+                        <h3>Tempo Traveller</h3>
+                        <p>12 Seats • AC</p>
+                        <a href="#" class="see-details" data-toggle="modal" data-target="#detailsModal" data-vehicle="Tempo Traveller" data-price="4500" data-seats="12" data-ac="AC" data-details="12 seats, 4 suitcases, Diesel, Manual transmission, A/C, Bluetooth">See details</a>
+                    </div>
+                    <div class="vehicle-actions">
+                        <p class="price">₹4,500</p>
+                        <button class="btn btn-success select-vehicle">Select</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="buses" role="tabpanel" aria-labelledby="buses-tab">
+                <div class="vehicle" data-vehicle="Mini Bus" data-price="7000" data-seats="18" data-ac="AC" data-image="/img/bus.png">
+                    <img src="/img/bus.png" alt="Mini Bus">
+                    <div class="vehicle-details">
+                        <h3>Mini Bus</h3>
+                        <p>18 Seats • AC</p>
+                        <a href="#" class="see-details" data-toggle="modal" data-target="#detailsModal" data-vehicle="Mini Bus" data-price="7000" data-seats="18" data-ac="AC" data-details="18 seats, 8 suitcases, Diesel, Manual transmission, A/C, Bluetooth">See details</a>
+                    </div>
+                    <div class="vehicle-actions">
+                        <p class="price">₹7,000</p>
+                        <button class="btn btn-success select-vehicle">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailsModalLabel">Vehicle Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Details will be populated by JavaScript -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tripType = urlParams.get('tripType');
+            const fromLocation = urlParams.get('fromLocation');
+            const toLocation = urlParams.get('toLocation');
+            const date = urlParams.get('date');
+
+            document.getElementById('search-details').innerHTML = `
+                <p><strong>Trip Type:</strong> ${tripType}</p>
+                <p><strong>From:</strong> ${fromLocation}</p>
+                <p><strong>To:</strong> ${toLocation}</p>
+                <p><strong>Date:</strong> ${date}</p>
+            `;
+
+            $('.see-details').click(function() {
+                const vehicle = $(this).data('vehicle');
+                const price = $(this).data('price');
+                const seats = $(this).data('seats');
+                const ac = $(this).data('ac');
+                const details = $(this).data('details').split(', ');
+                const icons = {
+                    "seats": "fas fa-chair",
+                    "suitcases": "fas fa-suitcase",
+                    "Gas": "fas fa-gas-pump",
+                    "Diesel": "fas fa-gas-pump",
+                    "Automatic transmission": "fas fa-cogs",
+                    "Manual transmission": "fas fa-cogs",
+                    "A/C": "fas fa-fan",
+                    "Bluetooth": "fas fa-bluetooth"
+                };
+
+                let detailsHtml = details.map(detail => {
+                    let [key, value] = detail.split(' ');
+                    key = key.toLowerCase();
+                    return `<p class="icon-text"><i class="${icons[key] || 'fas fa-info-circle'}"></i>${detail}</p>`;
+                }).join('');
+
+                $('#detailsModalLabel').text(vehicle + ' Details');
+                $('.modal-body').html(`
+                    <p><strong>Vehicle:</strong> ${vehicle}</p>
+                    <p><strong>Price:</strong> ₹${price}</p>
+                    ${detailsHtml}
+                `);
+            });
+
+            $('.select-vehicle').click(function() {
+                const vehicleData = {
+                    vehicle: $(this).closest('.vehicle').data('vehicle'),
+                    price: $(this).closest('.vehicle').data('price'),
+                    seats: $(this).closest('.vehicle').data('seats'),
+                    ac: $(this).closest('.vehicle').data('ac'),
+                    image: $(this).closest('.vehicle').data('image'),
+                    tripType,
+                    fromLocation,
+                    toLocation,
+                    date
+                };
+
+                const queryString = new URLSearchParams(vehicleData).toString();
+                window.location.href = 'details.html?' + queryString;
+            });
+        });
+    </script>
+
+</body>
+</html>
